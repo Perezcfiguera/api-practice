@@ -7,13 +7,12 @@ export const Card = ({item}) => {
       <div className="card-body">
         <h5 className="card-title">{item?.displayName}</h5>
 
-        <p className="card-text">
-           {`tipo: ${item.category}`}
-        </p>
-        <p>simbolob:{item.killStreamIcon}</p>
-        <p>cadencia: {item.fireRate}</p>
+      
+        <p>Categoria: {item?.shopData?.category}</p>
+        <p>cadencia: {item?.weaponStats?.fireRate}</p>
+        <p>tamaño de cargador: {item?.weaponStats?.magazineSize}</p>
         <p>tiempo de equipado: {item?.weaponStats?.equipTimeSeconds}</p>
-        <p>tiempo de recarga: {item.reloadTimeSeconds}</p>
+        <p>tiempo de recarga: {item?.weaponStats?.reloadTimeSeconds}</p>
         <a href="#" className="btn btn-primary">
           Go somewhere
         </a>
@@ -22,7 +21,6 @@ export const Card = ({item}) => {
   );
 };
 
-Card.prototype = {
-
-    item: PropTypes.array
-}
+Card.propTypes = {
+  item: PropTypes.object
+};

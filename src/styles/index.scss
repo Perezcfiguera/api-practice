@@ -1,2 +1,209 @@
 /* Global styles goes here */
 @import "bootstrap/scss/bootstrap";
+
+
+
+body {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #0f1923; 
+}
+
+
+h2 {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ff4655;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+.col {
+  flex: 0 1 300px;
+  max-width: 300px;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.card {
+  width: 100%;
+  background-color: #1f2a35;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #ff4655;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #cfd6dd;
+}
+
+
+.card {
+  background-color: #1a242f;
+  border-radius: 14px;
+  color: #ffffff;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
+
+
+.card-img-top {
+  background-color: #0f1923;
+  padding: 1rem;
+  object-fit: contain;
+  height: 180px;
+}
+
+
+.card-body {
+  padding: 1.2rem;
+  text-align: left;
+}
+
+
+.card-title {
+  color: #ff4655;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+
+.card-body p {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: #d0d6dc;
+}
+
+
+.card-body p::first-letter {
+  text-transform: uppercase;
+}
+
+
+.card-body .btn {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #ff4655;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.card-body .btn:hover {
+  background-color: #e03c4a;
+}
+
+
+.mb-5 {
+  margin-bottom: 2.5rem !important;
+}
+
+/* Contenedor del título */
+.title {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título principal */
+h2 {
+  position: relative;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ff4655;
+  margin: 0 auto 3rem auto;
+  padding-bottom: 0.75rem;
+}
+
+/* Línea decorativa inferior */
+h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 4px;
+  background-color: #ff4655;
+  border-radius: 2px;
+}
+
+/* Sutil brillo */
+h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 14px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 70, 85, 0.35),
+    transparent 70%
+  );
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+}

@@ -28,10 +28,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="container-fluid h-100"></div>
+      
       <div className="row aling-items-center"></div>
       <div className="col d-flex justify-content-center text-center"></div>
-      <h2>weapons api</h2>
+      <h2 className="title">weapons api</h2>
 
       <div className="row"> {weapon.map((weapon, index) => {
         return (
