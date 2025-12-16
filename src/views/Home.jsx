@@ -1,32 +1,50 @@
+import { useEffect, useState } from "react";
+import { Card } from "../assets/Components/Card.jsx";
+
 const Home = () => {
+  
+
+  const [weapon, setWeapon] = useState([])
+
+  const getWeapons = async () => {
+
+    try {
+      const response = await fetch("https://valorant-api.com/v1/weapons")
+      if (response.ok) {
+        const information = await response.json()
+        setWeapon(information.data)
+      } else {
+        alert("no se puedo encontrar las armas", response.statusText)
+      }
+
+    } catch (error) {
+      alert("paso algo", error)
+    }
+  }
+
+  useEffect(() => {
+    getWeapons()
+  })
+
   return (
     <>
-      <div
-        className="container shadow py-3 rounded-5 bg-body-tertiary"
-        style={{ marginTop: "15rem" }}
-      >
-        <div className="row">
-          <div className="col text-center">
-            <h1 className="fw-bold">¡Bienvenidos a React con Layouts!</h1>
-          </div>
-        </div>
-        <div className="row mt-5">
-          <div className="col text-center">
-            <h3>Aqui puedes ir a la vista /login</h3>
-            <div className="d-flex justify-content-center">
-              <a href="/login" className="btn btn-outline-danger">
-                Vista Login
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="container-fluid h-100"></div>
+      <div className="row aling-items-center"></div>
+      <div className="col d-flex justify-content-center text-center"></div>
+      <h2>weapons api</h2>
 
-      <div className="row mt-5">
-        <div className="col d-flex justify-content-center">
-          <img src="https://media.tenor.com/WFfC7L_kNCMAAAAj/starbound-poptop.gif" />
-        </div>
-      </div>
+      <div className="row"> {weapon.map((weapon, index) => {
+        return (
+          <div className="col d-flex justify-content-center" key={index}>
+            <Card item={weapon}/>
+          </div>
+          
+        )
+      })}</div>
+      
+      
+
+
     </>
   );
 };
